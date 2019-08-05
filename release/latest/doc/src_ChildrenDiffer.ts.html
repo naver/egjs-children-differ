@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Source: src/ChildrenDiffer.ts | egjs::ChildrenDiffer - API</title>
+    
+    <meta name="description" content="A module that checks diff when child elements are added, removed, or changed " />
+    
+        <meta name="keywords" content="diff, arr, list, children, dom, differ, data" />
+        <meta name="keyword" content="diff, arr, list, children, dom, differ, data" />
+    
+    
+    
+    <meta property="og:title" content=""/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content=""/>
+    
+    <meta property="og:url" content=""/>
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <link rel="canonical" href="https://naver.github.io/egjs-children-differ/release/latest/doc/"/>
+    
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/jaguar.css">
+    
+    
+    <script>
+    var config = {"monospaceLinks":true,"cleverLinks":true,"default":{"outputSourceFiles":true},"applicationName":"eg.ChildrenDiffer","disqus":"egjs","googleAnalytics":"UA-70842526-25","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"egjs::ChildrenDiffer - API","description":"A module that checks diff when child elements are added, removed, or changed ","keyword":"diff, arr, list, children, dom, differ, data"},"linenums":true,"link":{"home":"https://naver.github.io/egjs-list-differ","canonical":"https://naver.github.io/egjs-children-differ/release/latest/doc/"}};
+    </script>
+    
+
+    
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', config.googleAnalytics]);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    
+</head>
+<body>
+<div id="wrap" class="clearfix">
+    
+<div class="navigation">
+    <h3 class="applicationName">
+        <a href="//naver.github.io/egjs/"><img style="width:40px; height:20px;" src="img/type_white.svg"/></a>
+
+        <!-- Homepage link (prefer link.home than applicationName) -->
+        
+        <a href="https://naver.github.io/egjs-list-differ">ChildrenDiffer</a>
+        
+    </h3>
+
+    <div class="search">
+        <input id="search" type="text" class="form-control input-sm" placeholder="Search Documentations">
+    </div>
+    <ul class="list">
+        <li class="item">
+            <span class="title">
+                <a href="index.html">README</a>
+            </span>
+        </li>
+    
+        <!-- Non Grouping Version -->
+        
+            
+
+<li class="item" data-name="eg.ChildrenDiffer">
+    <span class="title">
+        <a href="eg.ChildrenDiffer.html">eg.ChildrenDiffer</a>
+        
+    </span>
+    <ul class="members itemMembers expends">
+    
+    </ul>
+    <ul class="typedefs itemMembers expends">
+    
+    <span class="subtitle">Typedefs</span>
+    
+        <li data-name="eg.ChildrenDiffer.ChildrenDiffResult"><a href="eg.ChildrenDiffer.html#.ChildrenDiffResult">ChildrenDiffResult</a></li>
+    
+    </ul>
+    <ul class="methods itemMembers expends">
+    
+    <span class="subtitle">Methods</span>
+    
+        <li data-name="eg.ChildrenDiffer.diff"><a href="eg.ChildrenDiffer.html#.diff">diff</a></li>
+    
+        <li data-name="eg.ChildrenDiffer#update"><a href="eg.ChildrenDiffer.html#update">update</a> <img src="img/i.png" width="14" title="inherited" alt="inherited"></li>
+    
+    </ul>
+    <ul class="events itemMembers expends">
+    
+    </ul>
+
+    
+</li>
+
+        
+            
+
+<li class="item" data-name="eg.ListDiffer">
+    <span class="title">
+        <a href="eg.ListDiffer.html">eg.ListDiffer</a>
+        
+    </span>
+    <ul class="members itemMembers expends">
+    
+    </ul>
+    <ul class="typedefs itemMembers expends">
+    
+    <span class="subtitle">Typedefs</span>
+    
+        <li data-name="eg.ListDiffer.DiffResult"><a href="eg.ListDiffer.html#.DiffResult">DiffResult</a></li>
+    
+    </ul>
+    <ul class="methods itemMembers expends">
+    
+    <span class="subtitle">Methods</span>
+    
+        <li data-name="eg.ListDiffer.diff"><a href="eg.ListDiffer.html#.diff">diff</a></li>
+    
+        <li data-name="eg.ListDiffer#update"><a href="eg.ListDiffer.html#update">update</a></li>
+    
+    </ul>
+    <ul class="events itemMembers expends">
+    
+    </ul>
+
+    
+</li>
+
+        
+    
+    </ul>
+</div>
+
+    <div class="main">
+        <h1 class="page-title" data-filename="src_ChildrenDiffer.ts.html">Source: src/ChildrenDiffer.ts</h1>
+        
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/*
+egjs-children-differ
+Copyright (c) 2019-present NAVER Corp.
+MIT license
+*/
+import ListDiffer, { ListFormat } from "@egjs/list-differ";
+import { findKeyCallback } from "./consts";
+
+/**
+ * A module that checks diff when child are added, removed, or changed .
+ * @ko 자식 노드들에서 자식 노드가 추가되거나 삭제되거나 순서가 변경된 사항을 체크하는 모듈입니다.
+ * @memberof eg
+ * @extends eg.ListDiffer
+ */
+class ChildrenDiffer&lt;T extends Element = Element> extends ListDiffer&lt;T> {
+  /**
+   * @param - Initializing Children &lt;ko> 초기 설정할 자식 노드들&lt;/ko>
+   */
+  constructor(
+    list: ListFormat&lt;T> = [],
+  ) {
+    super(list, findKeyCallback);
+  }
+}
+export default ChildrenDiffer;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+
+
+        
+        <!-- disqus code -->
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        <!-- // disqus code -->
+        
+
+        <footer>
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 0.3.7</a> on Mon Aug 05 2019 17:54:11 GMT+0900 (GMT+09:00)
+        </footer>
+    </div>
+</div>
+<script>prettyPrint();</script>
+<script src="scripts/main.js"></script>
+</body>
+</html>
