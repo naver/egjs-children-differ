@@ -1,0 +1,143 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ngx-children-differ": {
+      "root": "projects/ngx-children-differ",
+      "sourceRoot": "projects/ngx-children-differ/src",
+      "projectType": "library",
+      "prefix": "ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-children-differ/tsconfig.lib.json",
+            "project": "projects/ngx-children-differ/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-children-differ/src/test.ts",
+            "tsConfig": "projects/ngx-children-differ/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-children-differ/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-children-differ/tsconfig.lib.json",
+              "projects/ngx-children-differ/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-children-differ-example": {
+      "root": "projects/ngx-children-differ-example/",
+      "sourceRoot": "projects/ngx-children-differ-example/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ngx-children-differ-example",
+            "index": "projects/ngx-children-differ-example/src/index.html",
+            "main": "projects/ngx-children-differ-example/src/main.ts",
+            "polyfills": "projects/ngx-children-differ-example/src/polyfills.ts",
+            "tsConfig": "projects/ngx-children-differ-example/tsconfig.app.json",
+            "assets": [
+              "projects/ngx-children-differ-example/src/favicon.ico",
+              "projects/ngx-children-differ-example/src/assets"
+            ],
+            "styles": [
+              "projects/ngx-children-differ-example/src/styles.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngx-children-differ-example/src/environments/environment.ts",
+                  "with": "projects/ngx-children-differ-example/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ngx-children-differ-example:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ngx-children-differ-example:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngx-children-differ-example:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-children-differ-example/src/test.ts",
+            "polyfills": "projects/ngx-children-differ-example/src/polyfills.ts",
+            "tsConfig": "projects/ngx-children-differ-example/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-children-differ-example/karma.conf.js",
+            "styles": [
+              "projects/ngx-children-differ-example/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/ngx-children-differ-example/src/favicon.ico",
+              "projects/ngx-children-differ-example/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-children-differ-example/tsconfig.app.json",
+              "projects/ngx-children-differ-example/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngx-children-differ"
+}

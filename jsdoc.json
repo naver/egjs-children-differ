@@ -1,0 +1,55 @@
+{
+  "tags": {
+    "allowUnknownTags" : true,
+    "dictionaries": ["jsdoc","closure"]
+  },
+  "source": {
+      "include": ["src", "README.md", "./node_modules/@egjs/list-differ/src"],
+      "includePattern": ".+\\.(j|t)s(doc|x)?$",
+      "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "opts": {
+      "template": "node_modules/egjs-jsdoc-template",
+      "destination": "./doc/",
+      "ignores": ["eg.Component"],
+      "expendsItemMembers": true,
+      "recurse": true
+  },
+  "plugins": [
+    "plugins/markdown",
+    "node_modules/egjs-jsdoc-template/jsdoc-plugin/ko",
+    "node_modules/egjs-jsdoc-template/jsdoc-plugin/group",
+    "node_modules/egjs-jsdoc-template/jsdoc-plugin/support"
+  ],
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": true,
+    "default": {
+      "outputSourceFiles" : true
+    },
+    "applicationName": "eg.ChildrenDiffer",
+    "disqus": "egjs",
+    "googleAnalytics": "UA-70842526-25",
+    "openGraph": {
+      "title": "",
+      "type": "website",
+      "image": "",
+      "site_name": "",
+      "url": ""
+    },
+    "meta": {
+      "title": "egjs::ChildrenDiffer - API",
+      "description": "A module that checks diff when child elements are added, removed, or changed ",
+      "keyword": "diff, arr, list, children, dom, differ, data"
+    },
+    "linenums": true,
+    "link": {
+      "canonical": "https://naver.github.io/egjs-flicking/release/latest/doc/"
+    }
+  },
+  "markdown": {
+    "parser": "gfm",
+    "hardwrap": true,
+    "tags": ["examples", "ko"]
+  }
+}

@@ -1,0 +1,30 @@
+#build tools
+*.config.js
+tsconfig*
+.travis.yml
+.codeclimate.yml
+
+#linters
+.tslint*
+
+#docs
+public
+demo
+jsdoc.json
+doc
+
+#tests
+tests
+
+#editor settings
+.idea
+.DS_Store
+.editorconfig
+
+coverage/
+node_modules/
+.github
+.gitignore
+
+# etc
+.browserslistrc

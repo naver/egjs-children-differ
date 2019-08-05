@@ -1,0 +1,65 @@
+{
+  "name": "@egjs/react-children-differ",
+  "version": "0.0.2",
+  "main": "dist/children-differ.cjs.js",
+  "module": "dist/children-differ.esm.js",
+  "types": "declaration/index.d.ts",
+  "sideEffects": false,
+  "description": "A React module that checks diff when child elements are added, removed, or changed",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "rollup -c && npm run declaration",
+    "declaration": "rm -rf declaration && tsc -p tsconfig.declaration.json",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naver/egjs-children-differ"
+  },
+  "author": {
+    "name": "NAVER Corp."
+  },
+  "namespace": {
+    "eg": "eg"
+  },
+  "keywords": [
+    "diff",
+    "arr",
+    "list",
+    "children",
+    "dom",
+    "differ",
+    "data"
+  ],
+  "license": "MIT",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@egjs/build-helper": "^0.0.5",
+    "@types/jest": "24.0.12",
+    "@types/node": "12.0.0",
+    "@types/react": "16.8.16",
+    "@types/react-dom": "16.8.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.0",
+    "typescript": "^3.2.4"
+  },
+  "dependencies": {
+    "@egjs/children-differ": "0.0.0"
+  }
+}

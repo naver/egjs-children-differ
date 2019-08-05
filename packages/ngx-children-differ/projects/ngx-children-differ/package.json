@@ -1,0 +1,33 @@
+{
+  "name": "@egjs/ngx-children-differ",
+  "version": "0.1.0",
+  "dependencies": {
+    "@egjs/children-differ": "0.0.0"
+  },
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
+  "description": "An Angular directive that checks diff when child elements are added, removed, or changed",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naver/egjs-children-differ"
+  },
+  "author": {
+    "name": "NAVER Corp."
+  },
+  "namespace": {
+    "eg": "eg"
+  },
+  "keywords": [
+    "diff",
+    "arr",
+    "list",
+    "children",
+    "dom",
+    "differ",
+    "data",
+    "angular"
+  ],
+  "license": "MIT"
+}

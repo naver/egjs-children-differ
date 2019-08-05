@@ -1,0 +1,13 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/ngx-children-differ",
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "umdModuleIds": {
+      "@egjs/children-differ": "eg.ChildrenDiffer"
+    }
+  },
+  "whitelistedNonPeerDependencies": [
+    "@egjs/children-differ"
+  ]
+}

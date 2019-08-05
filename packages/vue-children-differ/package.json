@@ -1,0 +1,52 @@
+{
+  "name": "@egjs/vue-children-differ",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "vue-cli-service serve demo/main",
+    "build": "rm -rf dist && rollup -c && npm run declaration",
+    "declaration": "rm -rf declaration && tsc -p tsconfig.declaration.json",
+    "lint": "vue-cli-service lint",
+    "test": "vue-cli-service test:unit"
+  },
+  "main": "dist/children-differ.cjs.js",
+  "module": "dist/children-differ.esm.js",
+  "types": "declaration/ChildrenDiffer.d.ts",
+  "sideEffects": false,
+  "description": "A Vue directive that checks diff when child elements are added, removed, or changed",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naver/egjs-children-differ"
+  },
+  "author": {
+    "name": "NAVER Corp."
+  },
+  "namespace": {
+    "eg": "eg"
+  },
+  "keywords": [
+    "diff",
+    "arr",
+    "list",
+    "children",
+    "dom",
+    "differ",
+    "data"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@egjs/children-differ": "0.0.0"
+  },
+  "devDependencies": {
+    "@egjs/build-helper": "0.0.4",
+    "@types/jest": "^23.1.4",
+    "@vue/cli-plugin-typescript": "^3.7.0",
+    "@vue/cli-plugin-unit-jest": "^3.7.0",
+    "@vue/cli-service": "^3.7.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "rollup-plugin-vue": "^5.0.0",
+    "ts-jest": "^23.0.0",
+    "typescript": "^3.4.3",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.5.21"
+  }
+}
