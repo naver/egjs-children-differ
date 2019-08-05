@@ -44,7 +44,8 @@
     },
     "linenums": true,
     "link": {
-      "canonical": "https://naver.github.io/egjs-flicking/release/latest/doc/"
+      "home": "https://naver.github.io/egjs-list-differ",
+      "canonical": "https://naver.github.io/egjs-children-differ/release/latest/doc/"
     }
   },
   "markdown": {
