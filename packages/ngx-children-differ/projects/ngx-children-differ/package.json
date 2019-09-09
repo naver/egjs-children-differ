@@ -1,8 +1,8 @@
 {
   "name": "@egjs/ngx-children-differ",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "dependencies": {
-    "@egjs/children-differ": "0.0.0"
+    "@egjs/children-differ": "^1.0.0"
   },
   "peerDependencies": {
     "@angular/common": "^7.2.0",
