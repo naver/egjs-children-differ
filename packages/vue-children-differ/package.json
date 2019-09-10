@@ -1,6 +1,6 @@
 {
   "name": "@egjs/vue-children-differ",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "start": "vue-cli-service serve demo/main",
     "build": "rm -rf dist && rollup -c && npm run declaration",
@@ -34,7 +34,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@egjs/children-differ": "0.0.0"
+    "@egjs/children-differ": "^1.0.0"
   },
   "devDependencies": {
     "@egjs/build-helper": "0.0.4",
