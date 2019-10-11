@@ -1,6 +1,6 @@
 {
   "name": "@egjs/react-children-differ",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "main": "dist/children-differ.cjs.js",
   "module": "dist/children-differ.esm.js",
   "types": "declaration/index.d.ts",
@@ -60,6 +60,6 @@
     "typescript": "^3.2.4"
   },
   "dependencies": {
-    "@egjs/children-differ": "0.0.0"
+    "@egjs/children-differ": "^1.0.0"
   }
 }
