@@ -1,6 +1,6 @@
 {
 	"name": "@egjs/children-differ",
-	"version": "1.0.0-snapshot",
+	"version": "1.0.1",
 	"description": "A module that checks diff when child elements are added, removed, or changed",
 	"main": "./dist/children-differ.js",
 	"module": "./dist/children-differ.esm.js",
@@ -22,7 +22,11 @@
 		"demo:prebuild-latest": "cpx 'dist/**/*' demo/release/latest/dist --clean && cpx 'doc/**/*' demo/release/latest/doc --clean",
 		"demo:deploy-init": "npm run build && npm run jsdoc && npm run demo:prebuild-version && npm run demo:prebuild-latest && gh-pages -d demo/ --remote upstream",
 		"demo:deploy": "npm run build && npm run jsdoc && npm run demo:prebuild-version && npm run demo:prebuild-latest && gh-pages -d demo/ --add --remote upstream",
-		"release": "release-helper upstream"
+		"release": "release-helper upstream",
+		"packages": "npm run packages:update && npm run packages:build && npm run packages:publish",
+		"packages:update": "pvu --update=react-children-differ,ngx-children-differ/projects/ngx-children-differ,vue-children-differ",
+		"packages:build": "pvu --build=react-children-differ,ngx-children-differ,vue-children-differ",
+		"packages:publish": "pvu --publish=react-children-differ,ngx-children-differ/dist/ngx-children-differ,vue-children-differ"
 	},
 	"repository": {
 		"type": "git",
@@ -60,6 +64,7 @@
 		"jest": "^24.7.1",
 		"print-coveralls": "^1.2.2",
 		"print-sizes": "0.0.4",
+		"pvu": "^0.4.1",
 		"sinon": "^7.3.1",
 		"ts-jest": "^24.0.1",
 		"tslint": "^5.15.0",
