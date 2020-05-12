@@ -48,6 +48,6 @@ import { ChildrenDiffResult } from "./types";
 export function diff<T extends Element = Element>(
   prevList: T[],
   list: T[],
-): ChildrenDiffResult {
-  return listdiff(prevList, list, findKeyCallback);
+): ChildrenDiffResult<T> {
+  return listdiff<T>(prevList, list, findKeyCallback);
 }
