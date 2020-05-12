@@ -1,6 +1,6 @@
 {
 	"name": "@egjs/children-differ",
-	"version": "1.0.1",
+	"version": "1.0.1-snapshot",
 	"description": "A module that checks diff when child elements are added, removed, or changed",
 	"main": "./dist/children-differ.js",
 	"module": "./dist/children-differ.esm.js",
